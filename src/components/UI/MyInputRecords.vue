@@ -10,10 +10,12 @@
             :placeholder="placeholder"
             :id="labelFor" 
             class="input"
+            :class="{ 'input-error': error && this.records.length === 0 }"
          />
         <div v-for="record in records" :key="record" class="input-record">
             <span @click="deleteRecord(record)">{{ record }}</span>
         </div>
+        <p v-if="error && this.records.length === 0" class="message-error">{{ error }}</p>
     </div>
 </template>
   
@@ -34,35 +36,39 @@ export default {
         clearOnSubmit: {
             type: Boolean,
         },
+        error: {
+            type: String
+        },
     },
     data() {
         return {
-            record: this.value || "",
-            records: [],
+            record: "",
+            records: this.value || [],
         };
     },
     methods: {
         addRecord(event) {
-            if (event.key === "," || event.key === ";" && this.record) {
+            if (event.key === "," || event.key === ";" && this.record.trim()) {
                 if (!this.records.includes(this.record.slice(0, -1))) {
                     this.records.push(this.record.slice(0, -1));
                     this.$emit("input", this.records);
-                    console.log(this.records);
                 }
                 this.record = "";
             }
         },
+
         deleteRecord(record) {
             this.records = this.records.filter((item) => record !== item);
             this.$emit("input", this.records);
         },
+
     },
     watch: {
         clearOnSubmit(value) {
-        if (value) {
-            this.records = [];
-            this.$emit('input', this.records);
-        }
+            if (value) {
+                this.records = [];
+                this.$emit('input', this.records);
+            }
         },
     },
 };
@@ -104,5 +110,13 @@ export default {
     font-weight: bold;
 }
 
+.message-error {
+  color: red;
+  margin-top: 3px;
+}
+
+.input-error {
+  border: 2px solid #ff0000;
+}
+
 </style>
-  

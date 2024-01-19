@@ -7,8 +7,10 @@
         @input="updateTextArea" 
         :id="labelFor" 
         class="textarea"
-        :placeholder="placeholder">
+        :placeholder="placeholder"
+        :class="{ 'input-error': error }">
     </textarea>
+    <p v-if="error" class="message-error">{{ error }}</p>
 </template>
 
 <script>
@@ -19,6 +21,8 @@ export default {
         labelText: String,
         labelFor: String,
         placeholder: String,
+        error: String,
+        type: String
     },
     methods: {
         updateTextArea(event) {
@@ -50,5 +54,19 @@ export default {
 .textarea:focus {
   border: 2px solid #00bfff;
 }
+
+.message-error {
+    color: red;
+    margin-top: 3px;
+}
+
+.input-error {
+    border: 2px solid #ff0000 !important;
+}
+
+.input-error:focus  {
+    border: 2px solid #ff0000 !important;
+}
+
 
 </style>

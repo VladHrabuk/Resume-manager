@@ -8,7 +8,10 @@
         :id="labelFor" 
         class="input"
         :placeholder="placeholder"
+        :class="{ 'input-error': error }"
+        
     >
+    <p v-if="error" class="message-error">{{ error }}</p>
 </template>
 
 <script>
@@ -25,6 +28,10 @@ export default {
         placeholder: {
             type: String,
         },
+        error: {
+            type: String,
+        },
+        type: String,
     },
     methods: {
         updateInput(event) {
@@ -46,6 +53,7 @@ export default {
     font-size: 16px;
     color: #333;
     outline: none;
+    transition: border-color 0.3s;
 }
 
 .input:focus {
@@ -56,6 +64,19 @@ export default {
     margin-top: 15px;
     display: block;
     font-weight: bold;
+}
+
+.message-error {
+    color: red;
+    margin-top: 3px;
+}
+
+.input-error {
+    border: 2px solid #ff0000 !important;
+}
+
+.input-error:focus  {
+    border: 2px solid #ff0000 !important;
 }
 
 </style>

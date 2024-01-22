@@ -1,49 +1,50 @@
 <template>
-    <div v-if="resumes && resumes.length > 0">
-        <h3>Resume list</h3>
-        <transition-group name="resume-list">
-            <resume-item 
-                :resume="resume"
-                v-for="resume in resumes"
-                :key="resume.id"
-                @remove="$emit('remove', resume)"
-            />
-        </transition-group>
-        
-    </div>
-    <h2 v-else>Resumes are not found!</h2>
+  <div v-if="resumes && resumes.length > 0">
+    <h2>Resume list</h2>
+    <transition-group name="resume-list">
+      <resume-item
+        :resume="resume"
+        :resumeIndex="index"
+        v-for="(resume, index) in resumes"
+        :key="resume.id"
+        @remove="$emit('remove', resume)"
+      />
+    </transition-group>
+  </div>
+  <h2 v-else>Resume list is empty!</h2>
 </template>
 
 <script>
 import ResumeItem from "@/components/ResumeItem";
 export default {
-    components: {ResumeItem},
-    props: {
-        resumes: {
-            type: Array,
-            required: true
-        }
-
-    }
-}
+  components: { ResumeItem },
+  props: {
+    resumes: {
+      type: Array,
+      required: true,
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
+h2 {
+  margin: 10px 0;
+}
 
-.post-list-enter-active,
-.post-list-leave-active {
+.resume-list-enter-active,
+.resume-list-leave-active {
   transition: all 0.5s ease;
 }
-.post-list-enter-from,
-.post-list-leave-to {
+.resume-list-enter-from,
+.resume-list-leave-to {
   opacity: 0;
   transform: translateX(30px);
 }
 
-.post-list-move, 
-.post-list-enter-active,
-.post-list-leave-active {
+.resume-list-move,
+.resume-list-enter-active,
+.resume-list-leave-active {
   transition: all 0.5s ease;
 }
-
 </style>

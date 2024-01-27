@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import App from "./App.vue";
-import components from "@/components/UI";
+import App from "./views/App.vue";
+import components from "@/components/ResumeFormFields";
 
 const app = createApp(App);
 

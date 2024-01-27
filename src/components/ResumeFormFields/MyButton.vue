@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn {
   padding: 15px 20px;
   color: #333;

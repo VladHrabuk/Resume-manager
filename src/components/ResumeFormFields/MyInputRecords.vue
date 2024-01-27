@@ -75,7 +75,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .input-record {
   display: inline-block;
   margin: 20px 10px 0 0;
@@ -102,20 +102,5 @@ export default {
 
 .input:focus {
   border: 2px solid #00bfff;
-}
-
-.label-input {
-  margin-top: 15px;
-  display: block;
-  font-weight: bold;
-}
-
-.message-error {
-  color: red;
-  margin-top: 3px;
-}
-
-.input-error {
-  border: 2px solid #ff0000;
 }
 </style>

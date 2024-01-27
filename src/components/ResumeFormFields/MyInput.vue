@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .input {
   width: 100%;
   border: 1px solid #333;
@@ -55,24 +55,5 @@ export default {
 
 .input:focus {
   border: 2px solid #00bfff;
-}
-
-.label-input {
-  margin-top: 15px;
-  display: block;
-  font-weight: bold;
-}
-
-.message-error {
-  color: red;
-  margin-top: 3px;
-}
-
-.input-error {
-  border: 2px solid #ff0000 !important;
-}
-
-.input-error:focus {
-  border: 2px solid #ff0000 !important;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="app">
     <h1 class="title">Resume Manager</h1>
     <hr style="border-color: #00bfff" />
-    <my-form @create="createResume" />
+    <resume-form @create="createResume" />
     <resume-list
       :resumes="resumes"
       @remove="removeResume"
@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import MyForm from "@/components/MyForm.vue";
-import ResumeList from "@/components/ResumeList.vue";
+import ResumeForm from "../components/ResumeFormStructure/ResumeForm.vue";
+import ResumeList from "../components/ResumeList.vue";
 export default {
-  components: { MyForm, ResumeList },
+  components: { ResumeForm, ResumeList },
   data() {
     return {
       resumes: [

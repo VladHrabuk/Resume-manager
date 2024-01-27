@@ -33,12 +33,7 @@ export default {
 };
 </script>
 
-<style>
-.label-input {
-  margin-top: 15px;
-  display: block;
-}
-
+<style scoped>
 .textarea {
   width: 100%;
   height: 120px;
@@ -53,18 +48,5 @@ export default {
 
 .textarea:focus {
   border: 2px solid #00bfff;
-}
-
-.message-error {
-  color: red;
-  margin-top: 3px;
-}
-
-.input-error {
-  border: 2px solid #ff0000 !important;
-}
-
-.input-error:focus {
-  border: 2px solid #ff0000 !important;
 }
 </style>

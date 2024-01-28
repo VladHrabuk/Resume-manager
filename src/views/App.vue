@@ -28,7 +28,7 @@ export default {
             Front-end Pro. Green Forest English School - Upper-Intermediate cousre in English`,
           email: "hrabuk.vlad2004@gmail.com",
           experience: `I have not worked at any companies yet, but I have gained some experience cooperating, 
-            solving different IT tasks in a team as well as individually at university and during courses.`,
+            solving different IT tasks in a team as well as individually at university and during courses. `,
           id: 1,
           linkedin: "https://www.linkedin.com/in/vladyslav-hrabyk-a8b612203/",
           nameAndSurname: "Vlad Hrabyk",

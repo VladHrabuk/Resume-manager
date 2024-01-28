@@ -41,5 +41,7 @@ export default {
   min-height: 50px;
   min-width: 500px;
   max-width: 1200px;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 </style>

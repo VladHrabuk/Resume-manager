@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-container">
     <label :for="labelFor" class="label-input">
       {{ labelText }}
     </label>
@@ -76,6 +76,10 @@ export default {
 </script>
 
 <style scoped>
+.input-container {
+  height: 80px;
+}
+
 .input-record {
   display: inline-block;
   margin: 20px 10px 0 0;

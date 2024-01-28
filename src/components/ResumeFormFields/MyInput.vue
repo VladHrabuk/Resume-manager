@@ -1,16 +1,18 @@
 <template>
-  <label :for="labelFor" class="label-input">
-    {{ labelText }}
-  </label>
-  <input
-    :value="modelValue"
-    @input="updateInput"
-    :id="labelFor"
-    class="input"
-    :placeholder="placeholder"
-    :class="{ 'input-error': error }"
-  />
-  <p v-if="error" class="message-error">{{ error }}</p>
+  <div class="input-container">
+    <label :for="labelFor" class="label-input">
+      {{ labelText }}
+    </label>
+    <input
+      :value="modelValue"
+      @input="updateInput"
+      :id="labelFor"
+      class="input"
+      :placeholder="placeholder"
+      :class="{ 'input-error': error }"
+    />
+    <p v-if="error" class="message-error">{{ error }}</p>
+  </div>
 </template>
 
 <script>
@@ -41,6 +43,10 @@ export default {
 </script>
 
 <style scoped>
+.input-container {
+  height: 80px;
+}
+
 .input {
   width: 100%;
   border: 1px solid #333;
